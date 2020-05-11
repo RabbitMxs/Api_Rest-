@@ -5,7 +5,7 @@ const userCtrl=require('../controllers/user')
 const auth =require('../middlewares/auth')
 const api=express.Router()
 
-api.get('/product',ProductCtrl.getProducts)//
+api.get('/product', auth, ProductCtrl.getProducts)//
 api.get('/product/:productId',ProductCtrl.getProduct)//
 api.post('/product', auth ,ProductCtrl.saveProduct)//
 api.delete('/product/:productId', auth,ProductCtrl.deleteProduct)//

@@ -48,9 +48,9 @@ function updateProduct(req,res){
 
 function deleteProduct(req,res){
     let productId=req.params.productId
-    Product.findById(productId,(err)=>{
+    Product.findById(productId,(err, product)=>{
         if(err) return res.status(500).send({message: `Error al borrar el producto: ${err}`})
-        Product.remove((err=>{
+        product.remove((err=>{
             if(err) return res.status(500).send({message: `Error al borrar el producto: ${err}`})
             res.status(200).send({message: `El producto ha sido eliminado`})
         }))

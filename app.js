@@ -20,6 +20,6 @@ app.get('/login',(req,res)=>{
 })
 app.get('/', (req, res) => {
     res.render('product')
-  })
+})
 
 module.exports=app
